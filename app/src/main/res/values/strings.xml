@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">XenoNotes</string>
+    <string name="stringSearchTint">Search notes</string>
+    <string name="stringHeadingApp">Notes</string>
+</resources>
