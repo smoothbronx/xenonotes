@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">XenoNotes</string>
-    <string name="stringSearchTint">Search notes</string>
+    <string name="stringSearchHint">Search notes</string>
     <string name="stringHeadingApp">Notes</string>
+    <string name="stringNoteHint">Note Title</string>
+    <string name="type_note_here">Type note here..</string>
+    <string name="note_subtitle">Note Subtitle</string>
 </resources>

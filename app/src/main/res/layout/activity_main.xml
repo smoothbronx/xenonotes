@@ -50,7 +50,7 @@
             android:layout_marginStart="@dimen/_12sdp"
             android:background="@null"
             android:fontFamily="@font/ubuntu_regular"
-            android:hint="@string/stringSearchTint"
+            android:hint="@string/stringSearchHint"
             android:imeOptions="actionDone"
             android:importantForAutofill="no"
             android:includeFontPadding="false"
