@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.example.samsungproject"
+        applicationId "com.xenofium.xenonotes"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1

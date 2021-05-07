@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">XenoNotes</string>
     <string name="stringSearchHint">Найти заметки</string>
     <string name="stringHeadingApp">Заметки</string>
     <string name="stringNoteHint">Заголовок заметки</string>
     <string name="type_note_here">Пишите заметку здесь..</string>
     <string name="note_subtitle">Подзаголовок заметки</string>
+    <string name="errorTitleIsEmpty">Заголовок не может быть пустым!</string>
+    <string name="errorNoteIsEmpty">Заметка не может быть пустой!</string>
 </resources>

@@ -1,4 +1,4 @@
-package com.example.samsungproject;
+package com.xenofium.xenonotes;
 
 import org.junit.Test;
 

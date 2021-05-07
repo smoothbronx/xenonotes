@@ -1,4 +1,4 @@
-package com.example.samsungproject;
+package com.xenofium.xenonotes;
 
 import android.content.Context;
 
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getInstrumentation().getTargetContext();
-        assertEquals("com.example.samsungproject", appContext.getPackageName());
+        assertEquals("com.xenofium.xenonotes", appContext.getPackageName());
     }
 }

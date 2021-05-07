@@ -1,8 +1,10 @@
 <resources>
-    <string name="app_name">XenoNotes</string>
+    <string name="app_name" translatable="false">XNotes</string>
     <string name="stringSearchHint">Search notes</string>
     <string name="stringHeadingApp">Notes</string>
     <string name="stringNoteHint">Note Title</string>
     <string name="type_note_here">Type note here..</string>
     <string name="note_subtitle">Note Subtitle</string>
+    <string name="errorTitleIsEmpty">Note title can`t be empty!</string>
+    <string name="errorNoteIsEmpty">Note can`t be empty!</string>
 </resources>
