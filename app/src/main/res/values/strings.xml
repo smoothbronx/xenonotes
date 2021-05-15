@@ -7,4 +7,11 @@
     <string name="note_subtitle">Note Subtitle</string>
     <string name="errorTitleIsEmpty">Note title can`t be empty!</string>
     <string name="errorNoteIsEmpty">Note can`t be empty!</string>
+    <string name="extended" >Extended</string>
+    <string name="pick_color" >Pick Color</string>
+    <string name="add_image">Add Image</string>
+    <string name="add_link">Add Link</string>
+    <string name="enter_link">Enter Link</string>
+    <string name="add_dialog">ADD</string>
+    <string name="cancel_dialog">CANCEL</string>
 </resources>

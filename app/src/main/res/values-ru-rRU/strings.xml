@@ -7,4 +7,11 @@
     <string name="note_subtitle">Подзаголовок заметки</string>
     <string name="errorTitleIsEmpty">Заголовок не может быть пустым!</string>
     <string name="errorNoteIsEmpty">Заметка не может быть пустой!</string>
+    <string name="extended">Расширенное</string>
+    <string name="pick_color">Цвет</string>
+    <string name="add_image">Добавить изображение</string>
+    <string name="add_link">Добавить ссылку</string>
+    <string name="enter_link">Введите ссылку</string>
+    <string name="add_dialog">ДОБАВИТЬ</string>
+    <string name="cancel_dialog">ОТМЕНИТЬ</string>
 </resources>
