@@ -7,6 +7,7 @@
     <color name="Accent">#FDBE3B</color>
     <color name="White">#FFFFFF</color>
     <color name="Black">#000000</color>
+    <color name="Delete">#FF4842</color>
 
     <!--  Icon Color  -->
     <color name="Icons">#A4A4A4</color>
@@ -27,7 +28,6 @@
     <color name="NoteColorRed">#FF4842</color>
     <color name="NoteColorBlue">#3A52FC</color>
     <color name="NoteColorBlack">#000000</color>
-    <color name="DeleteNote">#FF4842</color>
 
     <!--  Search Colors  -->
     <color name="SearchBackground">#333333</color>

@@ -14,4 +14,7 @@
     <string name="enter_link">Введите ссылку</string>
     <string name="add_dialog">ДОБАВИТЬ</string>
     <string name="cancel_dialog">ОТМЕНИТЬ</string>
+    <string name="enter_valid_link">Введите корректную ссылку!</string>
+    <string name="delete_note">Удалить заметку</string>
+    <string name="delete_note_message">Вы уверены что хотите удалить эту заметку?</string>
 </resources>

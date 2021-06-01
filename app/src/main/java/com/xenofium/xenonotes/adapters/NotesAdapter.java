@@ -1,8 +1,12 @@
 package com.xenofium.xenonotes.adapters;
 
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.GradientDrawable;
+import android.os.Handler;
+import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,15 +19,24 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.makeramen.roundedimageview.RoundedImageView;
 import com.xenofium.xenonotes.R;
 import com.xenofium.xenonotes.entities.Note;
+import com.xenofium.xenonotes.listeners.NotesListener;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
-public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder> {
+public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NoteViewHolder> {
 
     private List<Note> notes;
+    private NotesListener notesListener;
+    private Timer timer;
+    private List<Note> notesSource;
 
-    public NoteAdapter(List<Note> notes) {
+    public NotesAdapter(List<Note> notes, NotesListener notesListener) {
         this.notes = notes;
+        this.notesListener = notesListener;
+        notesSource = notes;
     }
 
     @NonNull
@@ -37,8 +50,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
     }
 
     @Override
-    public void onBindViewHolder(@NonNull NoteAdapter.NoteViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull NotesAdapter.NoteViewHolder holder, int position) {
         holder.setNote(notes.get(position));
+        holder.layoutNote.setOnClickListener(v -> notesListener.onNoteClicked(notes.get(position), position));
     }
 
     @Override
@@ -56,6 +70,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
         TextView textTitle, textSubtitle, textDatetime;
         LinearLayout layoutNote;
         RoundedImageView imageNote;
+        private BitmapFactory.Options options;
 
         NoteViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -87,8 +102,10 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
                 gradientDrawable.setColor(Color.parseColor("#333333"));
             }
 
-            if (note.getImagePath() != null) {
-                imageNote.setImageBitmap(BitmapFactory.decodeFile(note.getImagePath()));
+            if (note.getImagePath() != null && note.getImagePath().length() > 0) {
+                BitmapFactory.Options options = new BitmapFactory.Options();
+                options.inSampleSize = 8;
+                imageNote.setImageBitmap((Bitmap) BitmapFactory.decodeFile(note.getImagePath(), options));
                 imageNote.setVisibility(View.VISIBLE);
             }
             else {
@@ -97,4 +114,40 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.NoteViewHolder
 
         }
     }
+
+    public void searchNotes (final String searchKeyword) {
+        timer = new Timer();
+        timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                if (searchKeyword.trim().isEmpty()) {
+                    notes = notesSource;
+                }
+                else {
+                    ArrayList<Note> temp = new ArrayList<>();
+                    for (Note note : notesSource) {
+                        if (note.getTitle().toLowerCase().contains(searchKeyword.toLowerCase())
+                                || note.getSubtitle().toLowerCase().contains(searchKeyword.toLowerCase())
+                                || note.getText().toLowerCase().contains(searchKeyword.toLowerCase())) {
+                            temp.add(note);
+                        }
+                    }
+                    notes = temp;
+                }
+                new Handler(Looper.getMainLooper()).post(new Runnable() {
+                    @Override
+                    public void run() {
+                        notifyDataSetChanged();
+                    }
+                });
+            }
+        }, 500);
+    }
+
+    public void cancelTimer () {
+        if (timer != null) {
+            timer.cancel();
+        }
+    }
+
 }
