@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name" translatable="false">Xenofium Notes</string>
+    <string name="stringSearchHint">Search notes</string>
+    <string name="stringHeadingApp">Notes</string>
+    <string name="stringNoteHint">Note Title</string>
+    <string name="type_note_here">Type note here..</string>
+    <string name="note_subtitle">Note Subtitle</string>
+    <string name="errorTitleIsEmpty">Note title can`t be empty!</string>
+    <string name="errorNoteIsEmpty">Note can`t be empty!</string>
+    <string name="extended">Extended</string>
+    <string name="pick_color">Pick Color</string>
+    <string name="add_image">Add Image</string>
+    <string name="add_link">Add Link</string>
+    <string name="enter_link">Enter Link</string>
+    <string name="add_dialog">ADD</string>
+    <string name="cancel_dialog">CANCEL</string>
+    <string name="enter_valid_link">Enter valid Link!</string>
+    <string name="delete_note">Delete Note</string>
+    <string name="delete_note_message">Are you sure you want to delete this note?</string>
+</resources>
